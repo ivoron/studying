@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calendar</title>
+	<link rel="stylesheet" href="./styles/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container-fluid bg-light">
+		<div class="row justify-content-center border-bottom rounded">Календарь</div>
+	</div>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-10 col-md-8 col-lg-8 bg-light m-1 border rounded" style="height: 100px">
+				<div class="row justify-content-start">
+					<div style="font-size: 2rem; color: #F10DB4FF; " 	class="col-2 border rounded m-1 text-center p-0 pt-1" id="dateElem"></div>
+					<div class="col-4" id="dateView"></div>
+					<div class="col">Планы на сегодня: <div class="planView font-weight-lighter text-muted">На сегодня ничего не запланированно</div> </div>
+
+				</div>
+			</div>
+		</div>
+		<div class="container m-0 p-0"> 
+		<div class="row align-items-center justify-content-center">
+			<div class="col-5 col-md-1 m-1 m-md-4 order-1 order-md-0 text-center p-0 d-flex justify-content-end"> <button id="prevMonth" class="btn btn-outline-info"><<<</button> </div>
+						
+			<div class="col-10 m-0 col-md-8 col-lg-8 bg-info m-1 border rounded order-0 order-md-1"> 
+				<table class="table text-monospace text-center m-2">
+					<thead>
+						<tr>
+							<th>Пн</th>
+							<th>Вт</th>
+							<th>Ср</th>
+							<th>Чт</th>
+							<th>Пт</th>
+							<th class="bg-secondary">Сб</th>
+							<th class="bg-danger">Вс</th>
+						</tr>
+					</thead>
+					<tbody id="tbody">
+						<tr id='forClone'>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="bg-secondary"></td>
+							<td class="bg-danger"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="bg-secondary"></td>
+							<td class="bg-danger"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="bg-secondary"></td>
+							<td class="bg-danger"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="bg-secondary"></td>
+							<td class="bg-danger"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="bg-secondary"></td>
+							<td class="bg-danger"></td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+			<div class="col-5 col-md-1 m-1 m-md-4 order-2 order-md-2 text-center p-0 d-flex justify-content-start"> <button id="nextMonth" class="btn btn-outline-info">>>></button></div>
+		</div>
+		</div>
+	</div>
+
+
+	
+
+				
+	<!-- =========================================== -->
+	<script src="./scripts/jquery-3.5.1.min.js"></script>
+	<script src="./scripts/bootstrap.min.js"></script>
+	<script type="text/javascript" src="calendar.js"></script>
+</body>
+</html>
