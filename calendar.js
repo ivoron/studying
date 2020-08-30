@@ -12,41 +12,33 @@ function calendar () {
 	let weekArr = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']
 	thisDay = weekArr[thisDay]
 	let thisMonth = monthArr[month]
-
+	
 	let table = document.getElementById('tbody')
 	let tableRow = document.getElementById('forClone')
-	let item = document.getElementsByTagName('td')
+	let item = document.querySelectorAll('td')
 	let clone = tableRow.cloneNode(true)
 
 	let showDay = document.getElementById ('dateElem')
 	let showDate = document.getElementById ('dateView')
-	// let prevMonth = document.getElementById ('prevMonth')
-	// let nextMonth = document.getElementById ('nextMonth')
+	let prevMonth = document.getElementById ('prevMonth')
+	let nextMonth = document.getElementById ('nextMonth')
 	showDay.innerHTML = today
 	showDate.innerHTML = `${thisDay}, <br> ${thisMonth} ${year} года`
 	
-	item[today +1].className = "bg-light rounded-pill font-weight-bold"
-
 	
-	// console.log(firstWeekDay, lastWeekDay)
-	// console.log(table)
-	
-	for (let i = 0; i < lastDay; i++) {
 	if (firstWeekDay == 0 || firstWeekDay > 5 && lastWeekDay < 3) {
-	table.append(clone)
-	} if (firstWeekDay == 0) {
-	item[i+6].innerHTML = i + 1;
-	} else {
-	item[i + firstWeekDay -1].innerHTML = i + 1;
+			table.append(clone)
+			item = document.querySelectorAll('td')
 	}
-	
-	}
-	
-		
-}
+	item[today + firstWeekDay -2].className = "bg-light rounded-pill font-weight-bold"
 
+	for (let i = 0; i < lastDay; i++) {
+		if (firstWeekDay == 0) {
+		item[i + 6].innerHTML = i + 1
+		} else {
+		item[i + firstWeekDay - 1].innerHTML = i + 1
+		item[i].className += ' hover'}
+	}
+}
 calendar()
-// if (i % 7 == 0 && i == today +2) {
-	// 	console.log(i -1)	
-	// 	item[i -1].className = "text-danger bg-light"
-	// 	}
+//тестирование отображения текущей даты 
